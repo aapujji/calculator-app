@@ -14,6 +14,14 @@ const divide = (x,y) => {
     return x / y;
 }
 
+const deleteLastItem = () => {
+
+}
+
+const clearScreen = () => {
+
+}
+
 const operate = (x,y,operation) => {
     switch (operation) {
         case "add":
