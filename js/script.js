@@ -1,15 +1,12 @@
-const add = (x,y) => {
-    return x + y;
-}
-
-const subtract = (x,y) => {
-    return x - y;   
-}
-
-const multiply = (x,y) => {
-    return x * y;
-}
-
-const divide = (x,y) => {
-    return x / y;
+const operation = (x,y,operation) => {
+    switch (operation) {
+        case "+":
+            return x = y;
+        case "-":
+            return x - y;
+        case "*":
+            return x * y;
+        case "/":
+            return x / y;
+    }
 }
