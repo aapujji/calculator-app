@@ -47,9 +47,9 @@ const init = () => {
         switch (true) {
             case target.classList.contains("digit"):
                 if (operator.length) {
-                    if (target.textContent === "." && operand2.includes(".")) return;
-                    if (target.textContent === "0" && operand2[operand2.length-1] === "0") return;
-                    if (target.textContent === "." && !operand2.length) {
+                    if (target.value === "." && operand2.includes(".")) return;
+                    if (target.value !== "." && operand2[operand2.length-1] === "0") return;
+                    if (target.value === "." && !operand2.length) {
                         operand2 += "0";
                     }
                     operand2 += target.textContent;
@@ -58,9 +58,9 @@ const init = () => {
                         operand1 = "";
                         resetCalculator = false;
                     }
-                    if (target.textContent === "." && operand1.includes(".")) return;
-                    if (target.textContent === "0" && operand1[operand1.length-1] === "0") return;
-                    if (target.textContent === "." && !operand1.length) {
+                    if (target.value === "." && operand1.includes(".")) return;
+                    if (target.value !== "." && operand1[operand1.length-1] === "0") return;
+                    if (target.value === "." && !operand1.length) {
                         operand1 += "0";
                     }
                     operand1 += target.textContent;
@@ -93,6 +93,15 @@ const init = () => {
                 break;
         }
         updateDisplay(`${operand1} ${operator} ${operand2}`);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        const buttons =document.querySelectorAll(".button");
+        buttons.forEach((button) => {
+            if (button.value === event.key) {
+                button.click();
+            }
+        });
     });
 }
 

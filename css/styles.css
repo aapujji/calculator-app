@@ -5,8 +5,10 @@
     --medgray: hsl(0, 5%, 81%);
     --offwhite: hsl(0, 0%, 93%);
     --blue: hsl(185, 42%, 37%);
+    --bluehover: hsl(185, 40%, 56%);
     --blueshadow: hsl(185, 58%, 25%);
     --orange: hsl(25, 98%, 40%);
+    --orangehover: hsl(6, 93%, 67%);
     --orangeshadow: hsl(25, 99%, 27%);
     --grayshadow: hsl(35, 11%, 61%);
     --black: hsl(60, 10%, 19%);
@@ -21,11 +23,16 @@
 
 body {
     font-family: "League Spartan", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--black);
 }
 
 button {
-    font-size: 32px;
+    font-size: 2rem;
+    cursor: pointer;
     border: 0;
+    outline: 0;
 }
 
 #container {
@@ -37,28 +44,81 @@ button {
     align-items: center;
 }
 
+#calculator {
+    margin: 0 auto;
+    min-width: 320px;
+    max-width: 540px;
+}
+
 #header {
     display: flex;
 }
 
+#header h1 {
+    letter-spacing: 0.5px;
+}
+
 #display {
     background-color: var(--offwhite);
+    padding: 20px;
     height: 80px;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    font-size: 3.5rem;
+    text-align: right;
 }
 
 #buttons {
     background-color: var(--medgray);
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 16px;
-    gap: 16px;
+    padding: 1rem;
+    gap: 1.5rem;
 }
 
 #buttons > button {
-    flex: 0 0 calc(25% - 12px);
+    background-color: var(--lightgray);
+    box-shadow: 0 5px 2px var(--grayshadow);
+    height: 64px;
+    border-radius: 10px;
+    color: var(--black);
+    font-weight: 700;
+    font-size: 2.5rem;
+    flex: 0 0 calc(25% - 1.125rem);
+}
+
+#buttons > button:hover {
+    background-color: var(--white);
+}
+
+#buttons > button.long,
+#buttons > button.delete {
+    color: var(--white);
+    font-size: 1.75rem;
+}
+
+#buttons > button.delete,
+#buttons > button.clear {
+    background-color: var(--blue);
+    box-shadow: 0 5px 2px var(--blueshadow);
+}
+
+#buttons > button.delete:hover,
+#buttons > button.clear:hover {
+    background-color: var(--bluehover);
+}
+
+#buttons > button.enter {
+    background-color: var(--orange);
+    box-shadow: 0 5px 2px var(--orangeshadow);
+}
+
+#buttons > button.enter:hover {
+    background-color: var(--orangehover);
 }
 
 #buttons > button.long {
-    flex-basis: calc(50% - 8px);
+    flex-basis: calc(50% - 0.75rem);
 }
