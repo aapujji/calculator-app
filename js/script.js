@@ -17,7 +17,6 @@ const divide = (x,y) => {
 const operate = (x,operator,y) => {
     x = parseInt(x)
     y = parseInt(y);
-    console.log(x,operator,y);
     switch (operator) {
         case "+":
             return add(x,y);
@@ -55,7 +54,6 @@ const init = () => {
                     operand2 += target.textContent;
                 } else {
                     if (resetCalculator) {
-                        console.log("reset");
                         operand1 = "";
                         resetCalculator = false;
                     }
