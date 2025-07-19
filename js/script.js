@@ -36,12 +36,7 @@ const updateDisplay = (content) => {
     display.textContent = content;
 };
 
-const isNumber = (string) => {
-    return !isNaN(string);
-}
-
 const init = () => {
-    const display = document.querySelector("#display");
     const buttons = document.querySelector("#buttons");
     let operand1 = "", operator = "", operand2 = "";
     let resetCalculator = false;
