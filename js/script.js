@@ -23,9 +23,9 @@ const operate = (x,operator,y) => {
             return add(x,y);
         case "-":
             return subtract(x,y);
-        case "*":
+        case "×":
             return multiply(x,y);
-        case "/":
+        case "÷":
             return divide(x,y);
         default:
             console.error("not a valid operation");
@@ -37,53 +37,58 @@ const updateDisplay = (content) => {
     display.textContent = content;
 };
 
-const clearDisplay = (display) => {
-    display.textContent = "";
+const isNumber = (string) => {
+    return !isNaN(string);
 }
 
 const init = () => {
-    let operand1 = "", operator = "", operand2 = "";
     const buttons = document.querySelector("#buttons");
-    const display = document.querySelector("#display");
+    let operand1 = "", operator = "", operand2 = "";
+    let resetCalculator = false;
     
     buttons.addEventListener("click", (event) => {
-        const textContent = display.textContent;
-        const button = event.target.value;
-        if (button === "clear") {
-            clearDisplay(display);
-            operand1 = "", operator = "", operand2 = "";
-        } else if (button === "submit") {
-            if (operand1 && operator && operand2) {
-                const result = operate(operand1, operator, operand2);
-                updateDisplay(result);
-                operand1 = "";
-                operator = "";
-                operand2 = "";
-            }
-        } else if (button === "delete") {
-            // do nothing for now
-        } else if (button === ".") {
-            // do nothing for now
-        } else if (!isNaN(button)) {
-            if (operand1 && operator) {
-                operand2 += button
-            } else {
-                console.log("num 1");
-                operand1 += button;
-            }
-            updateDisplay(operand1 + operator + operand2);
-        } else {
-            if (operand1 && !operator) {
-                operator = button
-                updateDisplay(operand1 + operator + operand2);
-            } else if (operand1 && operator && operand2) {
-                const result = operate(operand1, operator, operand2);
-                operand1 = result;
-                operator = button;
-                operand2 = "";
-                updateDisplay(operand1 + operator);
-            }
+        event.preventDefault();
+        const target = event.target;
+        switch (true) {
+            case target.classList.contains("digit"):
+                if (operator.length) {
+                    operand2 += target.textContent;
+                } else {
+                    if (resetCalculator) {
+                        console.log("reset");
+                        operand1 = "";
+                        resetCalculator = false;
+                    }
+                    operand1 += target.textContent;
+                }
+                break;
+            case target.classList.contains("operator"):
+                if (operand1.length && !operator.length) {
+                    operator = target.textContent;
+                } else if (operand1.length && operator.length && operand2.length) {
+                    const result = `${operate(operand1, operator, operand2)}`;
+                    operand1 = result;
+                    operator = target.textContent;
+                    operand2 = "";
+                }
+                break;
+            case target.classList.contains("enter"):
+                if (operand1.length && operator.length && operand2.length) {
+                    const result = `${operate(operand1, operator, operand2)}`;
+                    operand1 = result;
+                    operator = "";
+                    operand2 = "";
+                    resetCalculator = true;
+                }
+                break;
+            case target.classList.contains("clear"):
+                operand1 = "", operator = "", operand2 = "";
+                break;
+            default:
+                console.error("There was an error. Please try again.");
+                break;
         }
+        updateDisplay(`${operand1} ${operator} ${operand2}`);
     });
 }
 
