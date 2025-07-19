@@ -15,8 +15,8 @@ const divide = (x,y) => {
 }
 
 const operate = (x,operator,y) => {
-    x = parseInt(x)
-    y = parseInt(y);
+    x = parseFloat(x)
+    y = parseFloat(y);
     switch (operator) {
         case "+":
             return add(x,y);
@@ -41,21 +41,32 @@ const isNumber = (string) => {
 }
 
 const init = () => {
+    const display = document.querySelector("#display");
     const buttons = document.querySelector("#buttons");
     let operand1 = "", operator = "", operand2 = "";
     let resetCalculator = false;
     
     buttons.addEventListener("click", (event) => {
-        event.preventDefault();
         const target = event.target;
+        if (target.id === "buttons") return;
         switch (true) {
             case target.classList.contains("digit"):
                 if (operator.length) {
+                    if (target.textContent === "." && operand2.includes(".")) return;
+                    if (target.textContent === "0" && operand2[operand2.length-1] === "0") return;
+                    if (target.textContent === "." && !operand2.length) {
+                        operand2 += "0";
+                    }
                     operand2 += target.textContent;
                 } else {
                     if (resetCalculator) {
                         operand1 = "";
                         resetCalculator = false;
+                    }
+                    if (target.textContent === "." && operand1.includes(".")) return;
+                    if (target.textContent === "0" && operand1[operand1.length-1] === "0") return;
+                    if (target.textContent === "." && !operand1.length) {
+                        operand1 += "0";
                     }
                     operand1 += target.textContent;
                 }
