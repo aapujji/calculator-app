@@ -1,6 +1,5 @@
 const add = (x,y) => x + y;
 const subtract = (x,y) => x - y;
-
 const multiply = (x,y) => x * y;
 const divide = (x, y) => (y === 0 ? "nice try" : x / y)
 
