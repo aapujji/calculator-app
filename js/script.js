@@ -32,11 +32,13 @@ const operate = (x,operator,y) => {
 }
 
 const updateDisplay = (content) => {
+    console.log(content);
     const display = document.querySelector("#display");
     display.textContent = content;
 };
 
 const init = () => {
+    const display = document.querySelector("#display");
     const buttons = document.querySelector("#buttons");
     let operand1 = "", operator = "", operand2 = "";
     let resetCalculator = false;
@@ -85,6 +87,17 @@ const init = () => {
                     resetCalculator = true;
                 }
                 break;
+            case target.classList.contains("delete"):
+                const equation = display.textContent.split(" ");
+                const length = equation.length;
+                if (equation[2]) {
+                    operand2 = equation[length-1].slice(0,-1);
+                } else if (equation[1]) {
+                    operator = ""
+                } else if (equation[0]) {
+                    operand1 = equation[length-1].slice(0,-1);
+                }
+                break;
             case target.classList.contains("clear"):
                 operand1 = "", operator = "", operand2 = "";
                 break;
@@ -92,7 +105,7 @@ const init = () => {
                 console.error("There was an error. Please try again.");
                 break;
         }
-        updateDisplay(`${operand1} ${operator} ${operand2}`);
+        updateDisplay(`${operand1}${operator ? " " + operator : ""}${operand2 ? " " + operand2 : ""}`);
     });
 
     document.addEventListener("keydown", (event) => {
