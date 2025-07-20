@@ -17,9 +17,9 @@ This project is part of The Odin Project. The designs for the calculator were ta
 
 ## Links
 
-[Live preview](https://aapujji.github.io/calc)
-[The Odin Project](https://www.theodinproject.com/)
-[Frontend Mentor](http://frontendmentor.io/)
+- [Live preview](https://aapujji.github.io/calc)
+- [The Odin Project](https://www.theodinproject.com/)
+- [Frontend Mentor](http://frontendmentor.io/)
 
 ## Install
 
