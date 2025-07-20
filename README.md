@@ -9,9 +9,9 @@
 ## Overview
 
 A basic calculator. The available functionality includes:
-    - baisc arithmetic operations (add, subtract, multiply, divide)
-    - support for decimal numbers
-    - keyboard support
+- baisc arithmetic operations (add, subtract, multiply, divide)
+- support for decimal numbers
+- keyboard support
 
 This project is part of The Odin Project. The designs for the calculator were taken from Frontend Mentor (links below)
 
