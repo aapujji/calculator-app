@@ -61,10 +61,10 @@ button {
 #display {
     background-color: var(--offwhite);
     padding: 20px;
-    height: 80px;
+    min-height: 80px;
     margin: 1.5rem 0;
     border-radius: 10px;
-    font-size: 3.5rem;
+    font-size: clamp(1rem, 3vw + 1rem, 3.5rem);
     text-align: right;
 }
 
