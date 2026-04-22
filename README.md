@@ -2,26 +2,33 @@
 
 ## Table of contents
 
--   [Overview](#overview)
-    -   [Links](#links)
-    -   [Install](#install)
+- [Overview](#overview)
+    - [Links](#links)
+    - [Install](#install)
 
 ## Overview
 
-A basic calculator. The available functionality includes:
+A calculator UI built using HTML, CSS & Typescript.
 
--   baisc arithmetic operations (add, subtract, multiply, divide)
--   support for decimal numbers
--   keyboard support
+- baisc arithmetic operations (add, subtract, multiply, divide)
+- support for decimal numbers
+- built for accessibility & includes support for keyboards as well as mouse/trackpad
 
-This project is part of The Odin Project. The designs for the calculator were taken from Frontend Mentor (links below)
+The look & feel (designs) for the calculator were taken from Frontend Mentor (links below)
 
 ## Links
 
--   [Live preview](https://aapujji.github.io/top-calculator-app/)
--   [The Odin Project](https://www.theodinproject.com/)
--   [Frontend Mentor](http://frontendmentor.io/)
+- [Live preview](https://aapujji.github.io/top-calculator-app/)
+- [Frontend Mentor](http://frontendmentor.io/)
 
 ## Install
 
-You can also run the project locally by cloning the repository and opening the index.html file in your browser.
+Clone the repo and run:
+
+`npm install`
+
+then:
+
+`npm run dev`
+
+to pull up the project locally on your machine.
