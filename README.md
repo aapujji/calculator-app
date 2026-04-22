@@ -3,32 +3,42 @@
 ## Table of contents
 
 - [Overview](#overview)
-    - [Links](#links)
-    - [Install](#install)
+- [Features](#features)
+- [Built With](#built-with)
+- [Live Preview](#live-preview)
+- [Install](#install)
+- [Acknowledgements](#acknowledgements)
 
 ## Overview
 
-A calculator UI built using HTML, CSS & Typescript.
+A simple calculator that performs basic arithmetic operations. Built as a personal project and later refactored to Typescript with accessibility improvements.
 
-- baisc arithmetic operations (add, subtract, multiply, divide)
+## Features
+
+- basic arithmetic operations (add, subtract, multiply, divide)
 - support for decimal numbers
-- built for accessibility & includes support for keyboards as well as mouse/trackpad
+- built for screen reader compatibility
+- includes support for keyboard input
 
-The look & feel (designs) for the calculator were taken from Frontend Mentor (links below)
+## Built with
 
-## Links
+- Typescript
+- HTML & CSS
+- Vite
+
+## Live Preview
 
 - [Live preview](https://aapujji.github.io/top-calculator-app/)
-- [Frontend Mentor](http://frontendmentor.io/)
 
 ## Install
 
 Clone the repo and run:
 
-`npm install`
+```bash
+npm install
+npm run dev
+```
 
-then:
+## Acknowledgements
 
-`npm run dev`
-
-to pull up the project locally on your machine.
+Design based on a challenge from [Frontend Mentor](https://frontendmentor.io/)
