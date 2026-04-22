@@ -1,40 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>calc</title>
-</head>
-<body>
-    <div id="container">
-        <div id="calculator">
-            <div id="header">
-                <h1>calc</h1>
-            </div>
-            <div id="display"></div>
-            <div id="buttons">
-                <button class="button digit" type="button" value="7">7</button>
-                <button class="button digit" type="button" value="8">8</button>
-                <button class="button digit" type="button" value="9">9</button>
-                <button class="button delete" type="button" value="Backspace">del</button>
-                <button class="button digit" type="button" value="4">4</button>
-                <button class="button digit" type="button" value="5">5</button>
-                <button class="button digit" type="button" value="6">6</button>
-                <button class="button operator" type="button" value="+">+</button>
-                <button class="button digit" type="button" value="1">1</button>
-                <button class="button digit" type="button" value="2">2</button>
-                <button class="button digit" type="button" value="3">3</button>
-                <button class="button operator" type="button" value="-">-</button>
-                <button class="button digit" type="button" value=".">.</button>
-                <button class="button digit" type="button" value="0">0</button>
-                <button class="button operator" type="button" value="/">÷</button>
-                <button class="button operator" type="button" value="*">×</button>
-                <button type="button" class="button long clear" value="clear">clear</button>
-                <button type="button" class="button long enter" value="=">=</button>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="./js/script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <title>calc</title>
+    </head>
+    <body>
+        <main id="container">
+            <section id="calculator" aria-labelledby="calc-title">
+                <div id="header">
+                    <h1 id="calc-title" aria-label="Calculator">calc</h1>
+                </div>
+                <div
+                    id="display"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                ></div>
+                <div id="buttons" role="group" aria-label="Calculator buttons">
+                    <button class="button digit" type="button" value="7">
+                        7
+                    </button>
+                    <button class="button digit" type="button" value="8">
+                        8
+                    </button>
+                    <button class="button digit" type="button" value="9">
+                        9
+                    </button>
+                    <button
+                        class="button delete"
+                        type="button"
+                        value="Backspace"
+                        aria-label="delete"
+                    >
+                        del
+                    </button>
+                    <button class="button digit" type="button" value="4">
+                        4
+                    </button>
+                    <button class="button digit" type="button" value="5">
+                        5
+                    </button>
+                    <button class="button digit" type="button" value="6">
+                        6
+                    </button>
+                    <button class="button operator" type="button" value="+">
+                        +
+                    </button>
+                    <button class="button digit" type="button" value="1">
+                        1
+                    </button>
+                    <button class="button digit" type="button" value="2">
+                        2
+                    </button>
+                    <button class="button digit" type="button" value="3">
+                        3
+                    </button>
+                    <button class="button operator" type="button" value="-">
+                        -
+                    </button>
+                    <button
+                        class="button digit"
+                        type="button"
+                        value="."
+                        aria-label="decimal point"
+                    >
+                        .
+                    </button>
+                    <button class="button digit" type="button" value="0">
+                        0
+                    </button>
+                    <button
+                        class="button operator"
+                        type="button"
+                        value="/"
+                        aria-label="divide"
+                    >
+                        ÷
+                    </button>
+                    <button
+                        class="button operator"
+                        type="button"
+                        value="*"
+                        aria-label="multiply"
+                    >
+                        ×
+                    </button>
+                    <button
+                        type="button"
+                        class="button long clear"
+                        value="clear"
+                    >
+                        clear
+                    </button>
+                    <button type="button" class="button long enter" value="=">
+                        =
+                    </button>
+                </div>
+            </section>
+        </main>
+        <script type="text/javascript" src="./src/main.ts"></script>
+    </body>
 </html>
